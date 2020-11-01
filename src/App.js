@@ -11,6 +11,8 @@ from '@material-ui/core'
 import InfoBox from './InfoBox'
 import Map from './Map'
 import Table from './Table'
+import {sortData} from './util'
+import LineGraph from './LineGraph'
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -39,7 +41,8 @@ function App() {
           }
           
         ));
-        setTableData(data);
+        const sortedData = sortData(data);
+        setTableData(sortedData);
         setCountries(countries);
       });
     
@@ -61,7 +64,6 @@ function App() {
 
     }) 
   }
-  console.log("Country Info ", countryInfo);
   return (
     <div className="app">
       <div className="app__left">
@@ -91,11 +93,14 @@ function App() {
       </div>
       <Card className="app__right">
         <CardContent >
-        <div>
-        <h3>Live Cases by Country</h3>
-        <Table countries={tableData} />
+        <div className="app__table">
+          <h3>Live Cases by Country</h3>
+          <Table countries={tableData} />
         </div>
-         <div><h3>Worldwide new cases</h3></div>
+         <div className="app__graph">
+          <h3>Worldwide new cases</h3>
+          <LineGraph />
+         </div>
         </CardContent>
       </Card>
       
