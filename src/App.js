@@ -96,16 +96,27 @@ function App() {
             </div>
             <div className="app__stats">
               <InfoBox isRed  active={casesType === "cases"} 
-              onClick={e =>setCasesType('cases')}
-               title="Coronavirus Cases " 
-               total={prettyPrintStat(countryInfo.cases)}
-                cases={prettyPrintStat(countryInfo.todayCases)}/>
-              <InfoBox active={casesType === "recovered"} onClick={e =>setCasesType('recovered')} title="Recoverd " total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
-              <InfoBox isRed active={casesType === "deaths"} onClick={e =>setCasesType('deaths')} title="Deaths" total={prettyPrintStat(countryInfo.deaths)}  cases={prettyPrintStat(countryInfo.todayDeaths)}/> 
+                onClick={e =>setCasesType('cases')}
+                title="Coronavirus Cases " 
+                total={prettyPrintStat(countryInfo.cases)}
+                  cases={prettyPrintStat(countryInfo.todayCases)}
+              />
+              <InfoBox active={casesType === "recovered"}
+                onClick={e =>setCasesType('recovered')}
+                  title="Recoverd " 
+                  total={prettyPrintStat(countryInfo.recovered)} 
+                  cases={prettyPrintStat(countryInfo.todayRecovered)}
+                />
+              <InfoBox isRed active={casesType === "deaths"} 
+                onClick={e =>setCasesType('deaths')} 
+                title="Deaths" total={prettyPrintStat(countryInfo.deaths)}  
+                cases={prettyPrintStat(countryInfo.todayDeaths)}
+                /> 
             </div>
             <Map casesType={casesType} countries={mapCountries} center={mapCenter}  zoom={mapZoom} />
       </div>
-      <Card className="app__right">
+      <div className="app__right">
+      <Card>
         <CardContent >
         <div className="app__table">
           <h3>Live Cases by Country</h3>
@@ -113,10 +124,12 @@ function App() {
         </div>
          <div className="app__graph">
           <h3>Worldwide new {casesType}</h3>
-          <LineGraph  casesType={casesType}/>
+          <LineGraph className="graph"  casesType={casesType}/>
          </div>
         </CardContent>
       </Card>
+      </div>
+      
       
     </div>
   );

@@ -1,13 +1,13 @@
 .infoBox {
   flex: 1;
+  cursor: pointer;
 }
 .infoBox--selected {
   border-bottom: 10px solid greenyellow;
   border-top: 10px solid greenyellow;
 }
 .infoBox--red {
-  border-bottom: 10px solid red;
-  border-top: 10px solid red;
+  border-color: red;
 }
 
 .infoBox:not(:last-child) {
@@ -16,7 +16,9 @@
 .infoBox__title {
   color: blueviolet !important;
 }
-
+.infoBox__cases--green {
+  color: yellowgreen !important;
+}
 .infoBox__cases {
   color: #cc1034;
   font-size: 1.75rem;

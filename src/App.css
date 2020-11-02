@@ -8,6 +8,10 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+.app__header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
 .app__header {
   display: flex;
   justify-content: space-between;
@@ -23,7 +27,6 @@ body {
 .map {
   margin-bottom: 20px;
 }
-
 .app__left {
   flex: 0.8;
   margin-top: 15px;
@@ -35,12 +38,31 @@ body {
   display: flex;
   flex-direction: column;
 }
+.app__table > h3 {
+  text-align: center;
+}
 .app__graph {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
 }
+.app__graph > h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
   }
+}
+
+.graph .MuicardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.graph {
+  flex-grow: 1;
 }
