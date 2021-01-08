@@ -66,3 +66,28 @@ body {
 .graph {
   flex-grow: 1;
 }
+@media (max-width: 570px) {
+  .app__left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app__header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .app__header > h1 {
+    margin-left: 35px;
+    margin-bottom: 10px;
+  }
+
+  .app__stats {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .app__stats > div.MuicardContent-root {
+    padding: 20px;
+  }
+}

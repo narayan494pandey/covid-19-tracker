@@ -20,11 +20,10 @@ function App() {
   const [country, setCountry] = useState('worldwide')
   const [countryInfo, setCountryInfo] = useState({})
   const [tableData, setTableData] = useState([])
-  const [mapCenter, setMapCenter] = useState({lat:34.80746 ,lng:-40.4796})
+  const [mapCenter, setMapCenter] = useState({lat:20.5937 , lng:78.9629})
   const [mapZoom, setMapZoom] = useState(3)
   const [mapCountries, setMapCountries] = useState([])
   const [casesType, setCasesType] = useState("cases") ;
-
 
   useEffect (() =>{
     fetch("https://disease.sh/v3/covid-19/all")
@@ -53,6 +52,7 @@ function App() {
         setTableData(sortedData);
         setCountries(countries);
         setMapCountries(data);
+        console.log(data)
       });
     
     }
@@ -103,13 +103,13 @@ function App() {
               />
               <InfoBox active={casesType === "recovered"}
                 onClick={e =>setCasesType('recovered')}
-                  title="Recoverd " 
+                  title="Recoverd Cases" 
                   total={prettyPrintStat(countryInfo.recovered)} 
                   cases={prettyPrintStat(countryInfo.todayRecovered)}
                 />
               <InfoBox isRed active={casesType === "deaths"} 
                 onClick={e =>setCasesType('deaths')} 
-                title="Deaths" total={prettyPrintStat(countryInfo.deaths)}  
+                title="Total Deaths" total={prettyPrintStat(countryInfo.deaths)}  
                 cases={prettyPrintStat(countryInfo.todayDeaths)}
                 /> 
             </div>

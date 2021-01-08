@@ -31,3 +31,26 @@
   font-weight: 700 !important;
   margin-bottom: 15px !important;
 }
+@media (max-width: 570px) {
+  .infoBox {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 180px !important;
+    width: 80% !important;
+  }
+  .infoBox:first-child {
+    margin-bottom: 15px;
+  }
+  .infoBox:nth-child(2) {
+    margin-bottom: 15px;
+  }
+  .infoBox__title {
+    padding-left: 50px !important;
+  }
+  .infoBox__cases {
+    padding-left: 50px !important;
+  }
+  .infoBox__total {
+    padding-left: 50px !important;
+  }
+}
